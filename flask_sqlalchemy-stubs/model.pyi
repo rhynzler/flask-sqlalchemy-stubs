@@ -2,6 +2,7 @@ from ._compat import to_str as to_str
 from re import Match as Match
 from sqlalchemy.ext.declarative import DeclarativeMeta
 from sqlalchemy.orm import Query
+from sqlalchemy import Table
 from typing import Any
 from typing import ClassVar, TypeVar, Generic, Type
 from . import BaseQuery
@@ -24,3 +25,4 @@ class DefaultMeta(NameMetaMixin, BindMetaMixin, DeclarativeMeta): ...
 class Model:
     query_class: ClassVar[Type[BaseQuery[Model]]] = ...
     query: ClassVar[BaseQuery[Model]]
+    __table__: ClassVar[Table]
