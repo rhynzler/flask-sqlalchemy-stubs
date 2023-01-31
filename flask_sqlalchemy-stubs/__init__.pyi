@@ -3,6 +3,7 @@ from flask.app import Flask
 from flask_sqlalchemy.model import DefaultMeta, Model as BaseModel
 from mypy_extensions import NoReturn as NoReturn
 import sqlalchemy as _sa
+from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import class_mapper
 from sqlalchemy.orm import backref
@@ -275,6 +276,7 @@ class SQLAlchemy:
         self.class_mapper = class_mapper
         self.backref = backref
         self.relationship = relationship
+        self.Mapped = Mapped
         self.mapped_column = mapped_column
     @property
     def metadata(self) -> MetaData: ...
