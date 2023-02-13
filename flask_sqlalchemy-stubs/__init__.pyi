@@ -161,7 +161,7 @@ class SQLAlchemy:
         engine_options: Union[Dict[str, str], Dict[str, type], None] = ...,
     ) -> None:
         # from sqlalchemy
-        self.Model: DefaultMeta
+        self.Model: Type[BaseModel]
         self.session: SessionBase
         self.Uuid: _sa.Uuid
         self.ARRAY = _sa.ARRAY
